@@ -1,0 +1,47 @@
+<template name="currentLots">
+    <table id="make-bid-table" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Address of the leader</th>
+                <th>Lot description</th>
+                <th>Bid</th>
+                <th>Buy out</th>
+                <th>Opened</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each allots}}
+            <tr class="lot-row">
+                <td id="make-bid-id" style="display:none;">{{id}}</td>
+                <td>{{leader}}</td>
+                <td>{{description}}</td>
+                <td id="current-bid-price">{{price}}</td>
+                <td>{{buyOutPrice}}</td>
+                <td>{{isOpened}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Make your bid</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Send finney:</label> 
+                        <input type="number" id="valueToSend" class="form-control" />
+                    </div>
+                    <button id="make-bid" class="btn btn-default">Make bid</button>
+                </div>
+               
+            </div>  
+        </div>
+    </div>
+    <hr>
+    <div>*Hint: to make a bid - just click on row</div>
+</template>
