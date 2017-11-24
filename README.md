@@ -5,5 +5,6 @@ Before running ensure you unlocked your MetaMask account and you have MeteorJS p
 ```
 git clone https://github.com/Minilfat/shoc-dapp.git
 cd shoc-dapp
+meteor npm i
 meteor
 ```
