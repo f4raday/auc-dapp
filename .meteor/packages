@@ -29,3 +29,4 @@ frozeman:persistent-minimongo
 frozeman:template-var
 session
 twbs:bootstrap
+momentjs:moment
