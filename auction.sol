@@ -95,7 +95,7 @@ contract Auction {
         if(lot.currentPrice>=lot.buyOutPrice) {
             //CloseLotOnBuyOut(id);
             lot.holder.send(lot.currentPrice * 1 finney);
-            lot.withdrawn = false;
+            lot.withdrawn = true;
         }
         
         NewBid(id);

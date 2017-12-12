@@ -17,7 +17,7 @@ Template.createLot.events({
         console.log(d,m,b,l);
         smci.AddLot(d, m, b, l, {
             gas: 300000,
-            from: coinbase,
+            from: web3.eth.accounts[0],
             value: web3.toWei(m, 'finney')
         }, (err, result) => {
             if (result) {
