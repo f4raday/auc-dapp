@@ -37,7 +37,13 @@ Template.currentLots.events({
 	},
 	"click #withdr": function(e, t) {
 		console.log("Withdrawing from id: ", k);
-        //var d = parseInt($('#valueToSend').val());
+		//var d = parseInt($('#valueToSend').val());
+		
+		const lotHolder = LotsCollection.find({ id: k }).fetch()[0].holder;
+		if (lotHolder != web3.eth.accounts[0]) {
+			alert("Not your lot!");
+			return;
+		}
 
         smci.WithdrawLot(k, {
         	gas: 300000,
