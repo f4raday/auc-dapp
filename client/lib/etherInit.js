@@ -1,6 +1,9 @@
 if (typeof web3 !== 'undefined'){
     console.log("Using web3 detected from external source like Metamask");
     web3 = new Web3(web3.currentProvider);
+    if (web3.eth.accounts.length == 0) {
+        alert("Sign in to your metamask account and refresh page!");
+    }
 } else {
     console.warn("No injected web3 was found! App will not work :(");
 }
